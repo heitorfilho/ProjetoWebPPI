@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  margin: auto;
+  background-color: f2f2f2;
+  overflow-x: hidden;
+  font-family: "Roboto", sans-serif;
+}
+
+h3 {
+  text-align: center;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px grey;
+}
+
+main {
+  width: 100vw;
+  height: 60.1vh;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10vh;
+}
+
+button {
+  margin-top: 1rem;
+}
+
+header {
+  width: 100vw;
+  background: #008f8c;
+}
+
+.nav-bar {
+  padding: 1.69rem;
+}
+
+.logo {
+  display: inline-block;
+}
+
+.logo img {
+  height: 30px;
+  float: left;
+}
+
+.logo h1 {
+  font-size: 25px;
+  color: whitesmoke;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  float: left;
+  margin-left: 10px;
+}
+
+.nav-list {
+  float: right;
+  margin-top: 20px;
+}
+
+.nav-list ul {
+  list-style: none;
+}
+
+.nav-item {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.15rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.opcoes:link,
+.opcoe:visited,
+.opcoe:active {
+  text-align: center;
+  color: #555;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 1em;
+  background-color: #eee;
+  border: 0.5px solid lightgray;
+  padding: 10px;
+  width: 80%;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 5px auto;
+  width: 80%;
+}
+
+.opcoes:hover {
+  background-color: #dedede;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-menu-icon {
+  cursor: pointer;
+  color: whitesmoke;
+  background: transparent;
+  font-size: 30px;
+  border: none;
+  width: 37px;
+  height: 38px;
+  margin-top: 10px;
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.move {
+  display: inline-block;
+  float: right;
+}
+
+/*------- Rodapé -------*/
+
+.rodape {
+  bottom: 0;
+  width: 100%;
+  background: #000;
+  color: #8a8a8a;
+  font-size: 14px;
+  padding: 60px 20px 20px;
+}
+
+.rodape p {
+  color: #8a8a8a;
+}
+
+.rodape h3 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.rodape-coluna-1,
+.rodape-coluna-2,
+.rodape-coluna-3,
+.rodape-coluna-4 {
+  min-width: 250px;
+  margin-bottom: 20px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.rodape-coluna-1 {
+  width: 30%;
+}
+
+.rodape-coluna-2 {
+  width: 40%;
+  text-align: center;
+}
+
+.rodape-coluna-2 img {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.rodape-coluna-3,
+.rodape-coluna-4 {
+  width: 12%;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.app-logo {
+  margin-top: 20px;
+}
+
+.app-logo img {
+  width: 140px;
+}
+
+.rodape hr {
+  border: none;
+  background: #b5b5b5;
+  height: 1px;
+  margin: 20px 0;
+}
+
+.menu-icon {
+  width: 28px;
+  margin-left: 20px;
+  display: none;
+}
+
+/*Responsividade para celulares*/
+@media only screen AND (max-width: 600px) {
+  .logo h1 {
+    font-size: 22px;
+  }
+
+  .logo img {
+    width: 80px;
+  }
+
+  .container2 {
+    width: 80%;
+  }
+
+  .nav-bar {
+    padding: 1.5rem;
+  }
+
+  .nav-item {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .mobile-menu ul {
+    display: block;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .mobile-menu .nav-item {
+    display: block;
+    padding-top: 1.2rem;
+  }
+
+  .mobile-menu {
+    width: 100%;
+  }
+
+  .open {
+    display: block;
+  }
+}
+
+/*Responsividade para ipad*/
+@media all AND (min-width: 700px) and (max-width: 820px) {
+  .logo h1 {
+    font-size: 30px;
+  }
+
+  .logo img {
+    width: 110px;
+  }
+
+  .nav-bar {
+    padding: 1.5rem;
+  }
+
+  .nav-item {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .mobile-menu ul {
+    display: block;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .mobile-menu .nav-item {
+    display: block;
+    padding-top: 1.2rem;
+  }
+
+  .mobile-menu {
+    width: 100%;
+  }
+
+  .open {
+    display: block;
+  }
+
+  .container {
+    height: 85vh;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+/*Responsividade para Surface Pro 7*/
+@media all AND (min-width: 912px) and (max-width: 1000px) {
+  main {
+    height: 85vh;
+  }
+  .logo h1 {
+    font-size: 30px;
+  }
+
+  .logo img {
+    width: 110px;
+  }
+
+  .nav-bar {
+    padding: 1.5rem;
+  }
+
+  .nav-item {
+    display: none;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+  }
+
+  .mobile-menu ul {
+    display: block;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .mobile-menu .nav-item {
+    display: block;
+    padding-top: 1.2rem;
+  }
+
+  .mobile-menu {
+    width: 100%;
+  }
+
+  .open {
+    display: block;
+  }
+}
+
+/*Responsividade para Galaxy Fold*/
+@media all AND (max-width: 280px) {
+  .logo img {
+    width: 70px;
+  }
+
+  .logo h1 {
+    font-size: 18px;
+  }
+
+  .mobile-menu-icon {
+    width: 32px;
+    height: 32px;
+    margin-top: 5px;
+  }
+
+  .nav-bar {
+    padding: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .linha {
+    text-align: center;
+  }
+  .coluna-2,
+  .coluna-3,
+  .coluna-4 {
+    width: 100%;
+    float: none;
+  }
+  .unico-produto .linha {
+    text-align: left;
+  }
+  .unico-produto .coluna-2 {
+    padding: 20px 0px;
+  }
+  .unico-produto h1 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+  .carrinho-info p {
+    display: none;
+  }
+}

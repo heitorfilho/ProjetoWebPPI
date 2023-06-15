@@ -1,0 +1,15 @@
+{
+    "name": "igor/projeto-web-ppi",
+    "autoload": {
+        "psr-4": {
+            "Igor\\ProjetoWebPpi\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "IgorAugust0",
+            "email": "augustoigor269@gmail.com"
+        }
+    ],
+    "require": {}
+}

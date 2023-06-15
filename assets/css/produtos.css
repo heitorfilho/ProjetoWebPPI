@@ -1,0 +1,227 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  position: relative;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.coluna-2 {
+  margin-top: 1rem;
+}
+
+/* Header styles */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.menu-items li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+/* Main styles */
+.produtos {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.produtos-header {
+  margin-bottom: 2rem;
+}
+
+.produtos-header h2 {
+  font-size: 2.5rem;
+  color: #888;
+}
+
+.produtos-search {
+  margin-bottom: 2rem;
+}
+
+.produtos-search input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 1rem;
+}
+
+.produtos-search button {
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.produtos-lista {
+  margin-top: 2rem;
+}
+
+.item {
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.item-image {
+  width: 150px;
+  height: 150px;
+  margin-right: 2rem;
+  float: left;
+  cursor: pointer;
+}
+
+.item-image:hover {
+  cursor: pointer;
+}
+
+.item-name {
+  font-weight: bold;
+  font: 1em ;
+  color: #333;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.item-price {
+  font: 1em ;
+  color: darkgreen;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.item-price::before {
+  content: "R$ ";
+}
+
+.item-description {
+  font: 1em ;
+  color: #888;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+/* Footer styles */
+.rodape {
+  background-color: #333;
+  color: #fff;
+  padding: 2rem;
+}
+
+.rodape-grupo {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.rodape-linha {
+  margin-bottom: 2rem;
+}
+
+.rodape-coluna {
+  display: inline-block;
+  width: 30%;
+  margin-right: 5%;
+  vertical-align: top;
+}
+
+.rodape-coluna:last-child {
+  margin-right: 0;
+}
+
+.rodape-coluna h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.rodape-coluna p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.app-logo img {
+  max-width: 100%;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.rodape ul {
+  margin-bottom: 1rem;
+}
+
+.rodape ul li {
+  margin-bottom: 0.5rem;
+}
+
+.rodape hr {
+  border: none;
+  border-top: 1px solid #fff;
+  margin: 2rem 0;
+}
+
+.rodape-copyright {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+input[type="text"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #555;
+  box-shadow: 0 0 5px #555;
+}
