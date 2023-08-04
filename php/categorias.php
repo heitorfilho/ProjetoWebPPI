@@ -28,6 +28,7 @@ try {
   while ($row = $stmt->fetch()) {
     $categories[] = new Category($row['nome'], $row['codigo']);
   }
+  header('Content-Type: application/json');
   echo json_encode($categories);
 } catch (Exception $e) {
   exit('Ocorreu uma falha: ' . $e->getMessage());

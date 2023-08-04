@@ -39,8 +39,11 @@ $sql = <<<SQL
         FROM anuncio
 SQL;
 
+$params = array();
+
 if (!empty($codigoCategoria)) {
-    $sql .= " WHERE anuncio.codCategoria = $codigoCategoria";
+    $sql .= " WHERE anuncio.codCategoria = ?";
+    $params[] = $codigoCategoria;
 }
 
 if (!empty($nome)) {
@@ -49,16 +52,21 @@ if (!empty($nome)) {
     } else {
         $sql .= " WHERE";
     }
-    $sql .= " anuncio.titulo LIKE '%$nome%'";
+    $sql .= " anuncio.titulo LIKE ?";
+    $params[] = "%$nome%";
 }
 
 $sql .= " ORDER BY anuncio.dataHora DESC";
-$sql .= " LIMIT $offset, $itemsPerPage) AS anuncios_paginados ON anuncio.codigo = anuncios_paginados.codigo";
+$sql .= " LIMIT ?, ?";
+$params[] = $offset;
+$params[] = $itemsPerPage;
+
+$sql .= ") AS anuncios_paginados ON anuncio.codigo = anuncios_paginados.codigo";
 $sql .= " INNER JOIN foto ON anuncio.codigo = foto.codAnuncio";
 
 try {
     $stmt = $pdo->prepare($sql);
-    $stmt->execute();
+    $stmt->execute($params);
     $products = array();
     while ($row = $stmt->fetch()) {
         $products[] = new Product($row['codigo'], $row['titulo'], $row['preco'], $row['dataHora'], $row['codCategoria'], $row['descricao'], $row['nomeArqFoto']);

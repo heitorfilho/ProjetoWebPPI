@@ -1,6 +1,17 @@
 <?php
 require_once 'config.php';
 
+/**
+ * Crie um arquivo config.php seguindo o formato abaixo e substitua os valores 
+ * das constantes pelos valores do seu banco de dados:
+ * 
+ * <?php
+ * define('DB_HOST', 'nome_do_host');
+ * define('DB_NAME', 'nome_do_banco_de_dados');
+ * define('DB_USERNAME', 'nome_do_usuario');
+ * define('DB_PASSWORD', 'senha_do_usuario');
+ * 
+ */
 function mysqlConnect()
 {
   // dsn é apenas um acrônimo de database source name

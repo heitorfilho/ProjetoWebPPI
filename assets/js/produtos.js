@@ -18,31 +18,27 @@ async function renderProducts(newProducts) {
   const prodsSection = document.getElementById("products");
   const template = document.getElementById("template");
 
-  // Remove os produtos antigos
+  // Remove old products
   while (prodsSection.children.length > 1) {
     prodsSection.removeChild(prodsSection.lastChild);
   }
 
-  // Adiciona os novos produtos
-  await Promise.all(
-    newProducts.map(async (product) => {
-      let productElement = template.content.cloneNode(true);
-      productElement.querySelector(".item-image").src =
-        "../assets/images/" + product.imagePath;
-      productElement.querySelector(".item-name").textContent = product.name;
-      productElement.querySelector(".item-price").textContent = product.price;
-      productElement.querySelector(".item-description").textContent =
-        product.description;
+  for await (const product of newProducts) {
+    const { imagePath, name, price, description, code } = product;
 
-      productElement
-        .querySelector(".item")
-        .addEventListener("click", function () {
-          redirectToProductPage(product.code); // Redirecionar para a página do produto com o ID do produto
-        });
+    const productElement = template.content.cloneNode(true);
+    const itemImage = productElement.querySelector(".item-image");
+    itemImage.src = `../assets/images/${imagePath}`;
+    productElement.querySelector(".item-name").textContent = name;
+    productElement.querySelector(".item-price").textContent = price;
+    productElement.querySelector(".item-description").textContent = description;
 
-      prodsSection.appendChild(productElement);
-    })
-  );
+    const item = productElement.querySelector(".item");
+    item.addEventListener("click", () => redirectToProductPage(code));
+
+    prodsSection.appendChild(productElement);
+    await new Promise((resolve) => requestAnimationFrame(resolve));
+  }
 }
 
 async function loadProducts() {
@@ -114,28 +110,24 @@ async function renderProductsInfinity(newProducts) {
   const prodsSection = document.querySelector("#products");
   const template = document.querySelector("#template");
 
-  // Adiciona os novos produtos
-  await Promise.all(
-    newProducts.map(async (product) => {
-      let productElement = template.content.cloneNode(true);
-      productElement.querySelector(
-        ".item-image"
-      ).src = `../assets/images/${product.imagePath}`;
-      productElement.querySelector(".item-name").textContent = product.name;
-      productElement.querySelector(".item-price").textContent = product.price;
-      productElement.querySelector(".item-description").textContent =
-        product.description;
+  for await (const product of newProducts) {
+    const { imagePath, name, price, description, code } = product;
 
-      productElement
-        .querySelector(".item")
-        .addEventListener("click", function () {
-          redirectToProductPage(product.code); // Redirecionar para a página do produto com o ID do produto
-        });
+    const productElement = template.content.cloneNode(true);
+    const itemImage = productElement.querySelector(".item-image");
+    itemImage.src = `../assets/images/${imagePath}`;
+    productElement.querySelector(".item-name").textContent = name;
+    productElement.querySelector(".item-price").textContent = price;
+    productElement.querySelector(".item-description").textContent = description;
 
-      prodsSection.appendChild(productElement);
-    })
-  );
+    const item = productElement.querySelector(".item");
+    item.addEventListener("click", () => redirectToProductPage(code));
+
+    prodsSection.appendChild(productElement);
+    await new Promise((resolve) => requestAnimationFrame(resolve));
+  }
 }
+
 function redirectToProductPage(productId) {
   // Redirecionar para a página produto.php com o ID do produto
   window.location.href = `../php/produto.php?id=${productId}`;

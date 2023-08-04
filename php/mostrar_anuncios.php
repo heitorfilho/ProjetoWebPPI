@@ -24,7 +24,6 @@ try {
 
     $stmt = $pdo->query($sql);
 } catch (Exception $e) {
-    //error_log($e->getMessage(), 3, 'log.php');
     exit('Ocorreu uma falha: ' . $e->getMessage());
 }
 ?>

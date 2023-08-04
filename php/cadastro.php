@@ -17,23 +17,15 @@ try {
   VALUES (?, ?, ?, ?, ?)
   SQL;
 
-  // Iniciando uma transação
-  $conn->beginTransaction();
   // Prepared statement (evita SQL injection)
   $stmt = $conn->prepare($sql);
   if (!$stmt->execute([$nome, $cpf, $email, $hashsenha, $telefone])) {
     throw new PDOException('Erro ao cadastrar anunciante');
   }
-  $id_anunciante = $conn->lastInsertId();
-
-  // Confirmar a transação
-  $conn->commit();
 
   header("location: ../pages/sucessoCadastro.html");
   exit();
 } catch (Exception $e) {
-  // Caso ocorra algum erro, desfazer a transação
-  $conn->rollBack();
   $errorCode = $e->getCode();
   $errorMessage = $e->getMessage();
   if ($errorCode === 1062) {
