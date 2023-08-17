@@ -6,13 +6,17 @@
 }
 
 /* Global styles */
-body {
+body{
   font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   color: #333;
   position: relative;
   min-height: 100vh;
+}
+
+main{
+  min-height: 45vh;
 }
 
 a {
@@ -139,6 +143,9 @@ ul {
   background-color: #333;
   color: #fff;
   padding: 2rem;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .rodape-grupo {
